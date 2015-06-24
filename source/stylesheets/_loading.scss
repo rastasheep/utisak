@@ -1,0 +1,52 @@
+@-webkit-keyframes rotate-left {
+  from {
+    -webkit-transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(360deg)
+  }
+}
+@-webkit-keyframes rotate-right {
+  from {
+    -webkit-transform: rotate(360deg)
+  }
+  to {
+    -webkit-transform: rotate(0deg)
+  }
+}
+#loading .big-gear,
+#small-loading .big-gear {
+  -webkit-animation-name: rotate-left;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear
+}
+#loading .small-gear,
+#small-loading .small-gear {
+  -webkit-animation-name: rotate-right;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  position: relative;
+  left: -27px;
+  top: -38px
+}
+#loading {
+  margin: 170px auto 0;
+  width: 210px;
+  text-align: center;
+  padding-left: 30px
+}
+#small-loading {
+  margin: 48px auto 30px;
+  width: 210px;
+  text-align: center;
+  padding-left: 30px
+}
+#small-loading .big-gear {
+  width: 48px
+}
+#small-loading .small-gear {
+  width: 35px
+}
+

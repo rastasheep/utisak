@@ -1,0 +1,25 @@
+scss_files: "source/stylesheets/**/*"
+
+linters:
+  StringQuotes:
+    style: "double_quotes"
+  ColorVariable:
+    enabled: false
+  EmptyLineBetweenBlocks:
+    enabled: true
+  HexNotation:
+    enabled: false
+  IdSelector:
+    enabled: false
+  ImportantRule:
+    enabled: false
+  MergeableSelector:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  QualifyingElement:
+    enabled: false
+  TrailingSemicolon:
+    enabled: false
+  VendorPrefix:
+    enabled: false

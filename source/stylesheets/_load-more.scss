@@ -1,0 +1,24 @@
+.load-more {
+  border: 1px solid #C1CFE6;
+  color: #5579BA;
+  background: a;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px;
+  padding: 10px;
+  @media (min-width: 550px) {
+    margin: 20px 0;
+    padding: 20px 10px;
+  }
+}
+.load-more:hover {
+  background: #F8F8F8;
+  cursor: pointer;
+  color: #5579BA;
+}
+.load-more:active {
+  background: #5579BA;
+  cursor: pointer;
+  color: #fff
+}

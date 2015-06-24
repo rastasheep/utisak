@@ -1,0 +1,111 @@
+body {
+  background: #f8f8f8;
+  font-family: proxima-nova, sans-serif
+}
+
+hr {
+  margin: .5rem 0 0;
+  border-top: 1px solid rgba(0, 0, 0, .05)
+}
+
+h5 { margin: 0 }
+
+.main-content {
+  margin-top: 10px;
+  background: #fff;
+  @media (min-width: 550px) {
+    margin-top: 0;
+    padding: 0 50px 50px;
+  }
+  @media (min-width: 1000px) { padding: 0 50px 20px }
+}
+
+.main-content h5 {
+  display: none;
+  padding-top: 50px;
+  @media (min-width: 550px) { display: block }
+}
+
+.main-content hr {
+  display: none;
+  @media (min-width: 550px) { display: block }
+}
+
+.no-stories {
+  color: #999;
+  font-size: 24px;
+  text-align: center;
+  margin: 30px
+}
+
+.no-stories img {
+  width: 80%;
+  margin: 0 auto 20px;
+  display: block
+}
+
+@media (min-width: 1000px) {
+  .three.columns { width: 30% }
+  .nine.columns { width: 70% }
+}
+
+
+// .date {
+//   font-size: 13px;
+//   color: #999;
+//   display: inline;
+//   margin: 0 0 0 10px;
+//   text-transform: uppercase;
+//   letter-spacing: 1px
+// }
+//
+// .top-stories {
+//   counter-reset: my-badass-counter;
+//   padding: 0 20px
+//   @media (min-width: 1000px) {
+//     font-size: 14px;
+//     line-height: 1.4em;
+//   }
+// }
+// .top-stories dt {
+//   position: relative;
+//   font-size: 16px;
+//   padding: 4px 0 0
+// }
+// .top-stories dt:before {
+//   content: counter(my-badass-counter);
+//   counter-increment: my-badass-counter;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   font-size: 14px;
+//   color: #999;
+//   border-radius: 100px;
+//   background: #fff;
+//   border: 1px solid #999;
+//   line-height: 2.3;
+//   width: 30px;
+//   height: 30px;
+//   text-align: center
+// }
+// .top-stories dd {
+//   margin: 0 0 15px 50px;
+//   border-bottom: 1px solid #eee;
+//   padding: 0 0 15px
+// }
+// .top-stories dt {
+//   padding-left: 50px
+// }
+// .top-stories dt a {
+//   color: #2A2A28
+// }
+// .top-stories dt a:hover {
+//   text-decoration: underline
+// }
+// .top-stories dd a {
+//   color: #999;
+//   cursor: pointer
+// }
+// .top-stories dd a:hover {
+//   text-decoration: underline
+// }
