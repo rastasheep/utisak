@@ -1,11 +1,13 @@
-<div class="nine columns main-content">
+<div class="nine columns main-content" ng-app="postsApp" ng-controller="PostsController as postsCtrl" ng-init="postsCtrl.init('https://demo9565267.mockable.io')">
 
   <%= partial "digest" %>
 
   <h5>Latest</h5>
   <hr>
 
-  <div class="article">
+  Showing {{postsCtrl.posts.length}} posts
+
+  <div class="article" ng-repeat="post in postsCtrl.posts" >
     <div class="article-share">
       <div class="article-share-content">
         <ul class="share-buttons">
@@ -39,29 +41,27 @@
 
     <div class="article-image">
       <div class="article-thumb">
-        <a target="_blank" rel="nofollow" href="https://api.watchville.co/v2/posts/16803/click">
-          <img src="./index_files/a5174be3b6a23f13d9c92a91654353fb">
+        <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}">
+          <img ng-src="{{post.hero_image_url}}" alt="" />
         </a>
       </div>
     </div><!-- .article-image -->
 
     <div class="article-meta">
       <div class="article-title">
-        <a target="_blank" rel="nofollow" href="https://api.watchville.co/v2/posts/16803/click">BEST FROM: aBlogtoWatch &amp; Friends June 19, 2015</a>
+        <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.title"></a>
       </div>
-      <div class="article-description">
-        Omega is held in high regard in many circles because they have been
-        making concerted efforts toward improving the chronometric performance,
-        reliability, and efficient of their movements. This began in earnest in 1999,
-        when they launched...
-      </div>
+      <div class="article-description" ng-bind="post.excerpt"></div>
 
       <div class="article-author">
-        <a target="_blank" rel="nofollow" href="https://api.watchville.co/v2/posts/16803/click">aBlogToWatch</a>
-          3 hours ago <!-- dot spacer --> · <!-- dot space -->
+        <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.author"></a>
+          {{ postsCtrl.published_at(post) | timeAgo}}
+          <!-- dot spacer --> · <!-- dot space -->
         <span>
           <span class="article-stats">
-            401 views<!-- dot spacer --> · <!-- dot space --> 36 reading
+            {{ post.total_views }} views
+            <!-- dot spacer --> · <!-- dot space -->
+            {{ post.current_readers }} reading
           </span>
         </span>
       </div>
