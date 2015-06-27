@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 gem "bundler", ">= 1.8.4"
 
-
 gem "middleman", "~> 4.0.0.beta.2"
 gem "middleman-core"
 gem "middleman-cli"

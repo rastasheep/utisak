@@ -7,7 +7,7 @@
 
   Showing {{postsCtrl.posts.length}} posts
 
-  <div class="article" ng-repeat="post in postsCtrl.posts" >
+  <div class="article" ng-repeat="post in postsCtrl.posts track by $index" >
     <div class="article-share">
       <div class="article-share-content">
         <ul class="share-buttons">
@@ -75,7 +75,12 @@
 
   <%= partial "digest" %>
 
-  <div class="load-more">Load More Stories</div>
+  <div class="load-more"
+       ng-class="{disabled: postsCtrl.loading}"
+       ng-click="postsCtrl.nextPage()">
+    <span ng-hide="postsCtrl.loading">Load More Stories</span>
+    <div class="spinner" ng-show="postsCtrl.loading"></div>
+  </div>
 </div>
 
 <%= partial "sidebar" %>
