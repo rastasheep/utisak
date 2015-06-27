@@ -28,4 +28,7 @@ window.Posts.PostsController = ($http) ->
       vm.posts = vm.posts.concat(data.posts)
       vm.loading = false
 
+  vm.share = (post) ->
+    post.sharing = !post.sharing
+
   return vm

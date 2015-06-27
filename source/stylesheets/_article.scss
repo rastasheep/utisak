@@ -218,22 +218,28 @@
   cursor: pointer
 }
 .share-buttons {
-  list-style: none;
-  margin-bottom: .2em
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  li {
+    display: inline-block
+  }
+  .share-icon {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin: 6px;
+    padding: 1px;
+    &:hover{ opacity: 0.9; }
+  }
 }
-.share-buttons li {
-  display: inline-block
-}
-.share-buttons .share-icon {
-  width: 40px;
-  height: 40px;
-  display: inline-block
-}
-.share-enabled .article-share {
+.sharing .article-share {
   display: block
 }
-.share-enabled .article-image,
-.share-enabled .article-meta {
+.sharing .article-image,
+.sharing .article-meta {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
@@ -258,40 +264,30 @@
   transition: background-color .5s ease-out;
   background-color: rgba(255, 255, 255, 0)
 }
-.share-enabled .article-share {
+.sharing .article-share {
   background-color: rgba(255, 255, 255, .8)
 }
 .article-share-content {
   position: absolute;
   width: 100%;
-  height: 90px;
+  height: 100%;
   overflow: auto;
   margin: auto;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  text-align: center
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.article-share-close {
-  text-align: center
-}
-.article-share-close span {
-  color: #E8BA7D;
-  text-transform: uppercase;
-  cursor: pointer
-}
-.share-icon.mail {
-  background-image: image-url("share-icons/icon-email.svg")
-}
-.share-icon.facebook {
-  background-image: image-url("share-icons/icon-facebook.svg")
-}
-.share-icon.pinterest {
-  background-image: image-url("share-icons/icon-pinterest.svg")
-}
-.share-icon.twitter {
-  background-image: image-url("share-icons/icon-twitter.svg")
+.share-icon {
+  &.email:hover { fill: #AFC0DF; }
+  &.facebook:hover { fill: #3b5998; }
+  &.gplus:hover { fill: #dd4b39; }
+  &.twitter:hover { fill: #55ACEE; }
 }
 .article em {
   background-color: rgba(232, 186, 125, .3);
