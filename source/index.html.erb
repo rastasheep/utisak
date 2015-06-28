@@ -1,84 +1,86 @@
-<div class="nine columns main-content" ng-app="postsApp" ng-controller="PostsController as postsCtrl" ng-init="postsCtrl.init('https://demo9565267.mockable.io')">
+<div class="row" ng-app="postsApp" app-content>
+  <div class="nine columns main-content" ng-controller="PostsController as postsCtrl" ng-init="postsCtrl.init('https://demo9565267.mockable.io')">
 
-  <%= partial "digest" %>
+    <%= partial "digest" %>
 
-  <h5>Latest</h5>
-  <hr>
+    <h5>Latest</h5>
+    <hr>
 
-  Showing {{postsCtrl.posts.length}} posts
+    Showing {{postsCtrl.posts.length}} posts
 
-  <div class="article"
-       ng-repeat="post in postsCtrl.posts track by $index"
-       ng-class="{sharing: post.sharing}">
-    <div class="article-share" ng-click="postsCtrl.share(post)">
-      <div class="article-share-content">
-        <ul class="share-buttons">
-          <li>
-            <a href share-link="https://www.facebook.com/sharer/sharer.php?u={{post.share_url | urlEncode}}">
-              <%= svg "icon-facebook" %>
-            </a>
-          </li>
-          <li>
-            <a href share-link="https://twitter.com/intent/tweet?source={{post.share_url | urlEncode}}&amp;text={{post.title | urlEncode}}%20{{post.share_url | urlEncode}}&amp;via=utisak_">
-              <%= svg "icon-twitter" %>
-            </a>
-          </li>
-          <li>
-            <a href share-link="https://plus.google.com/share?url={{post.share_url | urlEncode}}">
-              <%= svg "icon-gplus" %>
-            </a>
-          </li>
-          <li>
-          <a href share-link="mailto:?subject=%5BUtisak%5D%20{{post.title | urlEncode}}&amp;body={{ 'Check out this link I found on Utisak: ' | urlEncode }}%0D%0A {{post.title | urlEncode}}%20{{post.share_url | urlEncode}}">
-              <%= svg "icon-email" %>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div><!-- .article-share -->
+    <div class="article"
+         ng-repeat="post in postsCtrl.posts track by $index"
+         ng-class="{sharing: post.sharing}">
+      <div class="article-share" ng-click="postsCtrl.share(post)">
+        <div class="article-share-content">
+          <ul class="share-buttons">
+            <li>
+              <a href share-link="https://www.facebook.com/sharer/sharer.php?u={{post.share_url | urlEncode}}">
+                <%= svg "icon-facebook" %>
+              </a>
+            </li>
+            <li>
+              <a href share-link="https://twitter.com/intent/tweet?source={{post.share_url | urlEncode}}&amp;text={{post.title | urlEncode}}%20{{post.share_url | urlEncode}}&amp;via=utisak_">
+                <%= svg "icon-twitter" %>
+              </a>
+            </li>
+            <li>
+              <a href share-link="https://plus.google.com/share?url={{post.share_url | urlEncode}}">
+                <%= svg "icon-gplus" %>
+              </a>
+            </li>
+            <li>
+            <a href share-link="mailto:?subject=%5BUtisak%5D%20{{post.title | urlEncode}}&amp;body={{ 'Check out this link I found on Utisak: ' | urlEncode }}%0D%0A {{post.title | urlEncode}}%20{{post.share_url | urlEncode}}">
+                <%= svg "icon-email" %>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!-- .article-share -->
 
-    <div class="article-image">
-      <div class="article-thumb">
-        <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}">
-          <img ng-src="{{post.hero_image_url}}" alt="" />
-        </a>
-      </div>
-    </div><!-- .article-image -->
+      <div class="article-image">
+        <div class="article-thumb">
+          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}">
+            <img ng-src="{{post.hero_image_url}}" alt="" />
+          </a>
+        </div>
+      </div><!-- .article-image -->
 
-    <div class="article-meta">
-      <div class="article-title">
-        <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.title"></a>
-      </div>
-      <div class="article-description" ng-bind="post.excerpt"></div>
+      <div class="article-meta">
+        <div class="article-title">
+          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.title"></a>
+        </div>
+        <div class="article-description" ng-bind="post.excerpt"></div>
 
-      <div class="article-author">
-        <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.author"></a>
-          {{ postsCtrl.published_at(post) | timeAgo}}
-          <!-- dot spacer --> · <!-- dot space -->
-        <span>
-          <span class="article-stats">
-            {{ post.total_views }} views
+        <div class="article-author">
+          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.author"></a>
+            {{ postsCtrl.published_at(post) | timeAgo}}
             <!-- dot spacer --> · <!-- dot space -->
-            {{ post.current_readers }} reading
+          <span>
+            <span class="article-stats">
+              {{ post.total_views }} views
+              <!-- dot spacer --> · <!-- dot space -->
+              {{ post.current_readers }} reading
+            </span>
           </span>
-        </span>
-      </div>
+        </div>
 
-      <div class="share">
-        <a href ng-click="postsCtrl.share(post)">Share</a>
-      </div>
-    </div><!-- .article-meta -->
+        <div class="share">
+          <a href ng-click="postsCtrl.share(post)">Share</a>
+        </div>
+      </div><!-- .article-meta -->
 
-  </div><!-- .article- -->
+    </div><!-- .article- -->
 
-  <%= partial "digest" %>
+    <%= partial "digest" %>
 
-  <div class="load-more"
-       ng-class="{disabled: postsCtrl.loading}"
-       ng-click="postsCtrl.nextPage()">
-    <span ng-hide="postsCtrl.loading">Load More Stories</span>
-    <div class="spinner" ng-show="postsCtrl.loading"></div>
+    <div class="load-more"
+         ng-class="{disabled: postsCtrl.loading}"
+         ng-click="postsCtrl.nextPage()">
+      <span ng-hide="postsCtrl.loading">Load More Stories</span>
+      <div class="spinner" ng-show="postsCtrl.loading"></div>
+    </div>
   </div>
-</div>
 
-<%= partial "sidebar" %>
+  <%= partial "sidebar" %>
+</div>

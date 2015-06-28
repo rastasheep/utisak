@@ -19,4 +19,15 @@ window.Posts.PostsFactory = ($http)->
       # promises success should always return something in order to allow chaining
       response
 
+  PostsFactory::getCategories = ->
+    return @categories if @categories.length
+    self = this
+    url = @apiUrl + "/posts"
+
+    $http({method: "GET", cache: true, url: url}).then (response) ->
+      self.posts = response.data.posts
+      self.categories = response.data.categories
+      # promises success should always return something in order to allow chaining
+      response
+
   PostsFactory

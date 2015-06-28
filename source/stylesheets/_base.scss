@@ -44,11 +44,15 @@ h5 { margin: 0 }
   display: block
 }
 
+.page-loading{
+  background: #F8F8F8;
+  .ng-scope{ display: none; }
+}
+
 @media (min-width: 1000px) {
   .three.columns { width: 30% }
   .nine.columns { width: 70% }
 }
-
 
 // .date {
 //   font-size: 13px;
