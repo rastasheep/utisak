@@ -10,6 +10,7 @@ gem "middleman-minify-html"
 #gem "middleman-imageoptim"
 
 gem "scss_lint", :require => false
+gem "coffeelint"
 
 source "https://rails-assets.org" do
   gem "rails-assets-angular"
