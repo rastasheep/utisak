@@ -1,34 +1,31 @@
 window.Posts ?= {}
 
-window.Posts.PostsController = ($http) ->
+window.Posts.PostsController = (PostsFactory) ->
   vm = this
   vm.currentPage = 1
   vm.loading = false
+  vm.posts = []
 
   vm.init = (url) ->
-    vm.url = url
-    fullUrl = "#{vm.url}/posts"
-    fullUrl += "?page=#{vm.currentPage}" if vm.currentPage != 1
+    vm.postsFactory = new PostsFactory(url)
+    loadPosts()
 
-    $http.get(fullUrl).success (data) ->
-      vm.posts = data.posts
+  vm.nextPage = ->
+    return if vm.loading
+    vm.currentPage += 1
+    loadPosts()
 
   vm.published_at = (post) ->
     new Date(post.published_at*1000).toISOString()
 
-  vm.nextPage = ->
-    return if vm.loading
-    vm.loading = true
-    vm.currentPage += 1
-
-    fullUrl = "#{vm.url}/posts"
-    fullUrl += "?page=#{vm.currentPage}" if vm.currentPage != 1
-
-    $http.get(fullUrl).success (data) ->
-      vm.posts = vm.posts.concat(data.posts)
-      vm.loading = false
-
   vm.share = (post) ->
     post.sharing = !post.sharing
+
+  loadPosts = ->
+    vm.loading = true
+    vm.postsFactory.getPosts(vm.currentPage).then ->
+      vm.posts = vm.posts.concat(vm.postsFactory.posts)
+      vm.loading = !vm.loading
+      return
 
   return vm

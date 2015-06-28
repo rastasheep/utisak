@@ -2,6 +2,7 @@ window.Posts ?= {}
 
 angular
   .module("postsApp", ["yaru22.angular-timeago"])
-  .controller("PostsController", ["$http", Posts.PostsController])
+  .factory("PostsFactory", ["$http", Posts.PostsFactory])
+  .controller("PostsController", ["PostsFactory", Posts.PostsController])
   .filter("urlEncode", [Posts.UrlEncode])
   .directive("shareLink", [Posts.ShareLink])
