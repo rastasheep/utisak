@@ -9,8 +9,9 @@
 
   <dl class="search-filters">
 
-    <dt ng-repeat="category in catCtrl.categories track by $index">
-      <a ng-href="#{{category.title}}">
+    <dt ng-repeat="category in catCtrl.categories track by $index"
+        ng-class="{active: catCtrl.activeCategory(category)}" >
+      <a ng-href="#{{category.slug}}">
         <div class="feed-name">{{category.title}}</div>
         <div class="feed-count">{{category.id}}</div>
       </a>

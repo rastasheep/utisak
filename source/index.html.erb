@@ -8,7 +8,7 @@
 
     Title: {{postsCtrl.title}}</br>
 
-    Category: {{postsCtrl.category}}</br>
+    Category slug: {{postsCtrl.category_slug}}</br>
 
     <a href="#category">Unknown category (url: '#category')</a></br>
 
@@ -61,7 +61,7 @@
 
         <div class="article-author">
           <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.author"></a>
-            {{ postsCtrl.published_at(post) | timeAgo}}
+            {{ postsCtrl.publishedAt(post) | timeAgo}}
             <!-- dot spacer --> · <!-- dot space -->
           <span>
             <span class="article-stats">

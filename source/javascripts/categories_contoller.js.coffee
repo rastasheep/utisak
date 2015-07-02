@@ -9,4 +9,7 @@ window.Posts.CategoriesController = (PostsFactory) ->
       vm.categories = PostsFactory.categories
       return
 
+  vm.activeCategory = (category) ->
+    PostsFactory.category == category.slug
+
   return vm
