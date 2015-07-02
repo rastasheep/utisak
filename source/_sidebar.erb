@@ -1,25 +1,29 @@
 <div class="three columns sidebar"
      ng-controller="CategoriesController as catCtrl"
-     ng-init="catCtrl.init('https://demo9565267.mockable.io')">
+     ng-init="catCtrl.init()">
+
   <h5>Filter by Source</h5>
   <hr>
-  {{catCtrl.categories.length}}
+
+  Categories length {{catCtrl.categories.length}}
 
   <dl class="search-filters">
 
-    <dt ng-repeat="category in catCtrl.categories track by $index" >
-      <div class="feed-name">{{category.title}}</div>
-      <div class="feed-count">{{category.id}}</div>
+    <dt ng-repeat="category in catCtrl.categories track by $index">
+      <a ng-href="#{{category.title}}">
+        <div class="feed-name">{{category.title}}</div>
+        <div class="feed-count">{{category.id}}</div>
+      </a>
     </dt>
 
   </dl>
 
   <div class="terms">
     <div class="terms-tout">
-      <b>Want More Watchville?</b> <br>
+      <b>Want More Utisak?</b><br>
       Stay up-to-date by following us on
-      <a href="http://twitter.com/watchville">Twitter</a> and
-      <a href="http://instagram.com/watchville">Instagram</a>
+      <a href="http://twitter.com/utisak_">Twitter</a> and
+      <a href="http://instagram.com/#">Instagram</a>
     </div>
     <hr>
     <a href="/terms-of-service">Terms of Service</a>  and

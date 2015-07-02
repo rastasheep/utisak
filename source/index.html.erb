@@ -1,12 +1,19 @@
 <div class="row" ng-app="postsApp" app-content>
-  <div class="nine columns main-content" ng-controller="PostsController as postsCtrl" ng-init="postsCtrl.init('https://demo9565267.mockable.io')">
+  <div class="nine columns main-content" ng-controller="PostsController as postsCtrl">
 
     <%= partial "digest" %>
 
     <h5>Latest</h5>
     <hr>
 
+    Title: {{postsCtrl.title}}</br>
+
+    Category: {{postsCtrl.category}}</br>
+
+    <a href="#category">Unknown category (url: '#category')</a></br>
+
     Showing {{postsCtrl.posts.length}} posts
+
 
     <div class="article"
          ng-repeat="post in postsCtrl.posts track by $index"
