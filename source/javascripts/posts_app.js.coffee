@@ -7,7 +7,7 @@ angular
   .config(Posts.HttpInterceptorConfig)
   .factory("PostsFactory", ["$http", "$q", Posts.PostsFactory])
   .controller("PostsController", ["PostsFactory", "$location", "$scope", Posts.PostsController])
-  .controller("CategoriesController", ["PostsFactory", Posts.CategoriesController])
+  .controller("CategoriesController", ["PostsFactory", "$location", Posts.CategoriesController])
   .filter("urlEncode", [Posts.UrlEncode])
   .directive("shareLink", [Posts.ShareLink])
   .directive("appContent", ["$rootScope", "$document", Posts.AppContent])

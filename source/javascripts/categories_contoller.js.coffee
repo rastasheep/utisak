@@ -1,6 +1,6 @@
 window.Posts ?= {}
 
-window.Posts.CategoriesController = (PostsFactory) ->
+window.Posts.CategoriesController = (PostsFactory, $location) ->
   vm = this
   vm.categories = []
 
@@ -11,5 +11,8 @@ window.Posts.CategoriesController = (PostsFactory) ->
 
   vm.activeCategory = (category) ->
     PostsFactory.category == category.slug
+
+  vm.openCategory = (category) ->
+    $location.hash(category.slug)
 
   return vm

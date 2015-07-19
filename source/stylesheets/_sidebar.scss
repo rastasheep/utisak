@@ -2,19 +2,17 @@
   background: #f8f8f8;
   padding: 20px 15px 0;
   @media (min-width: 550px) { padding: 20px 50px 0 }
-  @media (min-width: 1000px) { padding: 50px 15px 0 }
+  @media (min-width: 1000px) { padding: 50px 0 0 }
 
 }
 
 .sidebar h5 {
   margin: 0 0 0 20px
 }
-.sidebar hr {
-  margin: .5rem 20px 0
-}
+// .sidebar hr { margin: .5rem 20px 0 }
 
 .search-filters {
-  padding: 0 20px;
+  // padding: 0 20px;
   margin-top: 0;
   dt {
     position: relative;
@@ -24,26 +22,47 @@
     clear: both;
     height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
+
+    position: relative;
+    font-size: 16px;
+    padding: 15px 40px 8px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    clear: both;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   dt:hover,
-  .active { background: #fff; }
+  .active {
+    border-left: 1px solid #8BA4D0;
+    border-right: 1px solid #8BA4D0;
+    background: #fff; }
 }
 
 .feed-name {
   float: left;
-  margin: 5px 0 0
+  line-height: 40px;
+  text-transform: uppercase;
 }
 
 .feed-count {
   float: right;
-  font-size: 15px;
-  border-radius: 100px;
-  background: #2A2A28;
-  color: #fff;
-  line-height: 2.5;
-  width: 35px;
-  height: 35px;
-  text-align: center
+  font-size: 14px;
+  border-radius: -21%;
+  line-height: 38px;
+  width: 30px;
+  text-align: center;
+  border: 1px solid #DDD;
+}
+
+.active .feed-count {
+  border: 1px solid #8BA4D0;
 }
 
 .terms {
