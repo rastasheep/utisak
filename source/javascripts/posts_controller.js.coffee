@@ -3,6 +3,7 @@ window.Posts ?= {}
 window.Posts.PostsController = (PostsFactory, $location, $scope) ->
   vm = this
   vm.posts = []
+  vm.wordsPerMin = 250
   vm.initializing = false
   vm.loading = false
 
@@ -20,7 +21,7 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
     new Date(post.published_at).toISOString()
 
   vm.readTime = (post) ->
-    new Date(post.published_at).toISOString()
+    Math.round(post.word_count / vm.wordsPerMin)
 
   vm.share = (post) ->
     post.sharing = !post.sharing
