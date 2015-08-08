@@ -105,6 +105,8 @@ GEM
       activesupport (>= 3.1)
     rack (1.6.4)
     rails-assets-angular (1.4.1)
+    rails-assets-angular-sanitize (1.4.1)
+      rails-assets-angular (= 1.4.1)
     rails-assets-angular-timeago (0.1.12)
       rails-assets-angular (>= 1.2.10, < 2)
     rainbow (2.0.0)
@@ -148,6 +150,7 @@ DEPENDENCIES
   middleman-minify-html
   middleman-sprockets
   rails-assets-angular!
+  rails-assets-angular-sanitize!
   rails-assets-angular-timeago!
   scss_lint
 

@@ -2,7 +2,7 @@ window.Posts ?= {}
 window.UtisakApiUrl = "https://demo9565267.mockable.io"
 
 angular
-  .module("postsApp", ["yaru22.angular-timeago"])
+  .module("postsApp", ["yaru22.angular-timeago", "ngSanitize"])
   .factory("HttpInterceptor", ["$q", "$rootScope", Posts.HttpInterceptor])
   .config(Posts.HttpInterceptorConfig)
   .factory("PostsFactory", ["$http", "$q", Posts.PostsFactory])

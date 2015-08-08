@@ -47,7 +47,7 @@
 
       <div class="article-image">
         <div class="article-thumb">
-          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}">
+          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" tabindex=-1>
             <img ng-src="{{post.hero_image_url}}" alt="" />
           </a>
         </div>
@@ -57,7 +57,7 @@
         <div class="article-title">
           <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.title"></a>
         </div>
-        <div class="article-description" ng-bind="post.excerpt"></div>
+        <div class="article-description" ng-bind-html="post.excerpt"></div>
 
         <div class="article-author">
           <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.author"></a>

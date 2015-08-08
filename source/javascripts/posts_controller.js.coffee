@@ -17,7 +17,10 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
     loadPosts(page: vm.currentPage + 1)
 
   vm.publishedAt = (post) ->
-    new Date(post.published_at*1000).toISOString()
+    new Date(post.published_at).toISOString()
+
+  vm.readTime = (post) ->
+    new Date(post.published_at).toISOString()
 
   vm.share = (post) ->
     post.sharing = !post.sharing

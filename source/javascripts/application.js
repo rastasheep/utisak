@@ -1,4 +1,5 @@
 //= require angular
+//= require angular-sanitize
 //= require angular-timeago
 //
 //= require ./url_encode_filter
