@@ -43,3 +43,7 @@ configure :build do
   activate :gzip
 #  activate :imageoptim
 end
+
+after_build do
+  `chmod -R +xr build`
+end

@@ -1,10 +1,13 @@
 window.Posts ?= {}
-window.UtisakApiUrl = "https://demo9565267.mockable.io"
+window.UtisakApiUrl = "http://local.go"
 
 angular
   .module("postsApp", ["yaru22.angular-timeago", "ngSanitize"])
   .factory("HttpInterceptor", ["$q", "$rootScope", Posts.HttpInterceptor])
-  .config(Posts.HttpInterceptorConfig)
+  .config([
+    "$httpProvider"
+    Posts.HttpInterceptorConfig
+  ])
   .factory("PostsFactory", ["$http", "$q", Posts.PostsFactory])
   .controller("PostsController", ["PostsFactory", "$location", "$scope", Posts.PostsController])
   .controller("CategoriesController", ["PostsFactory", "$location", Posts.CategoriesController])

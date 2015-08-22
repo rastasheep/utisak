@@ -16,3 +16,7 @@
 
 # Ignore .DS_store file
 .DS_Store
+
+# App specific
+packaging/output/*
+packaging/root/usr/local/share/utisak-webui/*
