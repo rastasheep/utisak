@@ -2,11 +2,11 @@
 //= require angular-sanitize
 //= require angular-timeago
 //
-//= require ./url_encode_filter
-//= require ./app_content_directive
-//= require ./share_link_directive
-//= require ./http_interceptor_factory
-//= require ./posts_factory
-//= require ./categories_contoller
-//= require ./posts_controller
-//= require ./posts_app
+//= require ./_url_encode_filter
+//= require ./_app_content_directive
+//= require ./_share_link_directive
+//= require ./_http_interceptor_factory
+//= require ./_posts_factory
+//= require ./_categories_contoller
+//= require ./_posts_controller
+//= require ./_posts_app
