@@ -6,6 +6,7 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
   vm.wordsPerMin = 250
   vm.initializing = false
   vm.loading = false
+  vm.morePages = true
 
   initCategory = (category) ->
     PostsFactory.setCategory(category)
@@ -33,6 +34,7 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
 
     PostsFactory.fetchPosts(vm.currentPage).then ( ->
       posts = PostsFactory.posts
+      vm.morePages = !(posts.length < 20)
       vm.posts = if vm.initializing then posts else vm.posts.concat(posts)
       vm.loading = !vm.loading
       return

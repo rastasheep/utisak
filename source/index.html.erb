@@ -83,7 +83,8 @@
 
     <div class="load-more"
          ng-class="{disabled: postsCtrl.loading}"
-         ng-click="postsCtrl.nextPage()">
+         ng-click="postsCtrl.nextPage()"
+         ng-show="postsCtrl.morePages">
       <span ng-hide="postsCtrl.loading">Load More Stories</span>
       <div class="spinner" ng-show="postsCtrl.loading"></div>
     </div>
