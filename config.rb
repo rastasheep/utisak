@@ -31,17 +31,18 @@ helpers do
   end
 end
 
+
 configure :development do
-#  activate :asset_hash
+  activate :minify_html, remove_input_attributes: false
 end
 
 configure :build do
   activate :asset_hash
-  activate :minify_html
+  activate :minify_html, remove_input_attributes: false
   activate :minify_css
   activate :minify_javascript
   activate :gzip
-#  activate :imageoptim
+# activate :imageoptim
 end
 
 after_build do
