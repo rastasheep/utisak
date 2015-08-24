@@ -17,6 +17,6 @@ window.Posts.HttpInterceptor = ($q, $rootScope) ->
       response or $q.when(response)
     responseError: (response) ->
       if --loadingCount == 0
-        $rootScope.$broadcast "loading:finish"
+        $rootScope.$broadcast "loading:error"
       $q.reject response
   }

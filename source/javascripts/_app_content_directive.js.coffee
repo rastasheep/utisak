@@ -9,4 +9,7 @@ window.Posts.AppContent = ->
       body.addClass(class_name)
       $rootScope.$on "loading:finish", ->
         body.removeClass(class_name)
+      $rootScope.$on "loading:error", ->
+        body.removeClass(class_name)
+        body.addClass("page-error")
   }
