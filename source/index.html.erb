@@ -6,15 +6,6 @@
     <h5>Latest</h5>
     <hr>
 
-    Title: {{postsCtrl.title}}</br>
-
-    Category slug: {{postsCtrl.category_slug}}</br>
-
-    <a href="#category">Unknown category (url: '#category')</a></br>
-
-    Showing {{postsCtrl.posts.length}} posts
-
-
     <div class="article"
          ng-repeat="post in postsCtrl.posts track by $index"
          ng-class="{sharing: post.sharing}">
