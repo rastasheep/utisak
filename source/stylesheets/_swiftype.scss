@@ -1,0 +1,20 @@
+// swiftype autocomplete styles
+
+.st-ui-type-heading{
+  font-size: 18px !important;
+}
+
+div.st-ui-autocomplete div.st-query-present a.st-ui-result .st-ui-type-detail,
+section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result .st-ui-type-detail {
+  font-size: initial !important;
+}
+
+div.st-ui-autocomplete div.st-query-present a.st-ui-result.st-ui-image .st-ui-thumbnail,
+section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result.st-ui-image .st-ui-thumbnail {
+  margin: 4px 0 0 -36px !important;
+}
+
+div.st-ui-autocomplete div.st-query-present,
+section.st-ui-slide-autocomplete div.st-query-present {
+  border-radius: 0 !important;
+}
