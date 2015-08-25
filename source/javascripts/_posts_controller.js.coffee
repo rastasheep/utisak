@@ -9,6 +9,7 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
   vm.morePages = true
 
   initCategory = (category) ->
+    return if _searchActive(category)
     PostsFactory.setCategory(category)
     loadPosts(init: true, page: 1)
 
@@ -40,5 +41,8 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
       return
     ), (reason) ->
       $location.hash("") if reason == "CNF"
+
+  _searchActive = (query) ->
+    query.indexOf("stq=") > -1
 
   return vm
