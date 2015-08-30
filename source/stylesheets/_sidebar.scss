@@ -14,7 +14,8 @@
 .search-filters {
   // padding: 0 20px;
   margin-top: 0;
-  dt {
+  a {
+    display:block;
     position: relative;
     font-size: 16px;
     padding: 15px 10px 8px;
@@ -38,7 +39,7 @@
     -ms-user-select: none;
     user-select: none;
   }
-  dt:hover,
+  a:hover,
   .active {
     border-left: 1px solid #8BA4D0;
     border-right: 1px solid #8BA4D0;
