@@ -6,6 +6,7 @@ window.Posts.PostsFactory = ($http, $q)->
     params = {}
     angular.extend(params, {category: @category}) if !!@category
     angular.extend(params, {page: page}) if page != 1
+    angular.extend(params, {sort: @sort}) if @sort != "top"
 
     $http({method: "GET", cache: true, url: PostsFactory.url, params: params}).then (response) =>
       @posts = response.data.posts
@@ -18,8 +19,9 @@ window.Posts.PostsFactory = ($http, $q)->
       @categories = response.data.categories
       response
 
-  setCategory = (category)->
-    @category = category
+  setOptions = (options = {}) ->
+    @sort = options.sort
+    @category = options.category
 
   _categoryExists = (categories, category) ->
     return true if category.length == 0 or !categories
@@ -32,4 +34,4 @@ window.Posts.PostsFactory = ($http, $q)->
     category: @category
     fetchCategories: fetchCategories
     fetchPosts: fetchPosts
-    setCategory: setCategory
+    setOptions: setOptions

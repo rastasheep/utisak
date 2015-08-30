@@ -7,17 +7,31 @@ window.Posts.PostsController = (PostsFactory, $location, $scope) ->
   vm.initializing = false
   vm.loading = false
   vm.morePages = true
+  vm.sort = "top"
 
-  initCategory = (category) ->
-    return if _searchActive(category)
-    PostsFactory.setCategory(category)
+  initFactory = (category) ->
+    PostsFactory.setOptions(sort: vm.sort, category: category)
     loadPosts(init: true, page: 1)
 
-  $scope.$watch (-> $location.hash()), initCategory
+  initSort = ->
+    if $location.search().newest
+      vm.sort = "newest"
+    else
+      vm.sort = "top"
+      vm.setSort("")
+
+  $scope.$on "$locationChangeSuccess", ->
+    category = $location.hash()
+    return if _searchActive(category)
+    initSort()
+    initFactory(category)
 
   vm.nextPage = ->
     return if vm.loading
     loadPosts(page: vm.currentPage + 1)
+
+  vm.setSort = (sort) ->
+    $location.search(sort)
 
   vm.publishedAt = (post) ->
     new Date(post.published_at).toISOString()

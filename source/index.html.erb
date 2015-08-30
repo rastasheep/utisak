@@ -5,7 +5,20 @@
 
     <%= partial "digest" %>
 
-    <h5>Latest</h5>
+    <h5 ng-switch on="postsCtrl.sort">
+      <span ng-switch-when="newest">
+        Newest
+        <!-- dot spacer --> · <!-- dot space -->
+        <a href ng-click="postsCtrl.setSort('top')">Top</a>
+      </span>
+
+      <span ng-switch-when="top">
+        <a href ng-click="postsCtrl.setSort('newest')">Newest</a>
+        <!-- dot spacer --> · <!-- dot space -->
+        Top
+      </span
+    </h5>
+
     <hr>
 
     <div class="article"
