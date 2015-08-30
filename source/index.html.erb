@@ -1,4 +1,6 @@
-<div class="row" ng-app="postsApp" app-content>
+<% content_for :page_classes, "page-loading" %>
+
+<div class="row app-content" ng-app="postsApp" app-content>
   <div class="nine columns main-content" ng-controller="PostsController as postsCtrl">
 
     <%= partial "digest" %>

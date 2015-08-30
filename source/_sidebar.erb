@@ -10,9 +10,8 @@
     <dt ng-repeat="category in catCtrl.categories track by $index"
         ng-class="{active: catCtrl.activeCategory(category)}"
         ng-click="catCtrl.openCategory(category)"
-        ng-keydown="$event.which === 13 && catCtrl.openCategory(category)"
-        tabindex=0>
-      <a ng-href="#{{category.slug}}" tabindex=-1>
+        ng-keydown="$event.which === 13 && catCtrl.openCategory(category)" >
+      <a ng-href="#{{category.slug}}">
         <div class="feed-name">{{category.title}}</div>
         <div class="feed-count">{{category.count}}</div>
       </a>

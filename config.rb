@@ -29,6 +29,10 @@ helpers do
   def svg(file_name)
     partial "inline-assets/#{file_name}"
   end
+
+  def page_classes
+    yield_content(:page_classes)
+  end
 end
 
 
