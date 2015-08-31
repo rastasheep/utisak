@@ -2,7 +2,12 @@
      ng-controller="CategoriesController as catCtrl"
      ng-init="catCtrl.init()">
 
-  <h5>Filter by Source</h5>
+   <h5>
+     Filter by Source
+     <a href class="clear-filter"
+       ng-click="catCtrl.openCategory({slug: null})"
+       ng-hide="catCtrl.activeCategory({slug: ''})">Clear</a>
+   </h5>
   <hr>
 
   <dl class="search-filters">
