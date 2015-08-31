@@ -22,7 +22,7 @@
   line-height: 67px;
 }
 .header-nav-link {
-  font-size: 11px;
+  font-size: 1.5rem;
   color: #fff;
   display: none;
   padding: 20px;
@@ -33,7 +33,6 @@
   @media (min-width: 750px) { display: inline }
   @media (min-width: 1000px) {
     display: inline;
-    font-size: 13px;
   }
 }
 .header-nav a {
