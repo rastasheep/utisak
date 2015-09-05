@@ -17,7 +17,7 @@ run:
 clean:
 	rm -rf build/*
 	rm -rf packaging/output
-	rm -f packaging/root/usr/local/bin/utisak-webui || true
+	rm -rf packaging/root/usr/local/share/utisak-webui || true
 
 packages: clean build deb rpm
 
