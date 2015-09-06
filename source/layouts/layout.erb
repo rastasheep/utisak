@@ -5,15 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <script>
-      document.write('<base href="' + document.location + '" />');
-    </script>
+    <script>document.write('<base href="' + document.location + '" />');</script>
 
     <title>Utisak | The latest news</title>
     <meta name="description" content="">
 
-    <%= favicon_tag "myicon.ico", :type => "image/x-icon" %>
-    <%= favicon_tag "myicon.ico", :rel => "apple-touch-icon" %>
+    <%= favicon_tag "favicon.png", :type => "image/x-icon" %>
+    <%= favicon_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
 
     <%= stylesheet_link_tag :application %>
   </head>
@@ -29,7 +27,6 @@
 
       <%= yield %>
 
-      <%= @swiftype_token %>
     </div>
 
     <%= partial "swiftype" %>
