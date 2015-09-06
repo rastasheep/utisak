@@ -1,5 +1,5 @@
 window.Posts ?= {}
-window.UtisakApiUrl = "http://local.go:8080"
+window.UtisakApiUrl = ""
 
 angular
   .module("postsApp", ["yaru22.angular-timeago", "ngSanitize"])
