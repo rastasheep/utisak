@@ -70,6 +70,25 @@
   margin: 0;
   position: relative
 }
+
+@mixin default-thumb($img_name) {
+  background: url(image_path("thumbs/thumb-#{$img_name}.svg")) no-repeat scroll center;;
+  border: none;
+  opacity: 0.2;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+}
+
+.article-thumb-drustvo { @include default-thumb(drustvo) }
+.article-thumb-ekonomija { @include default-thumb(ekonomija) }
+.article-thumb-hronika { @include default-thumb(hronika) }
+.article-thumb-kultura { @include default-thumb(kultura) }
+.article-thumb-politika { @include default-thumb(politika) }
+.article-thumb-sport { @include default-thumb(sport) }
+.article-thumb-svet { @include default-thumb(svet) }
+.article-thumb-tehnologija { @include default-thumb(tehnologija) }
+
 .article-image img {
   position: absolute;
   left: -100%;

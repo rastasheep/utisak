@@ -50,9 +50,9 @@
       </div><!-- .article-share -->
 
       <div class="article-image">
-        <div class="article-thumb">
+        <div class="article-thumb" ng-class="!post.hero_image_url ? 'article-thumb-' + post.category_slug : ''">
           <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" tabindex=-1>
-            <img ng-src="{{post.hero_image_url || '//:0'}}" alt="" />
+            <img ng-src="{{post.hero_image_url}}" ng-show="post.hero_image_url" alt="" />
           </a>
         </div>
       </div><!-- .article-image -->
