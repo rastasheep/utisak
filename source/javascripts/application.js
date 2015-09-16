@@ -10,3 +10,4 @@
 //= require ./_categories_contoller
 //= require ./_posts_controller
 //= require ./_posts_app
+//= require ./_utils

@@ -13,6 +13,7 @@ window.Posts.CategoriesController = (PostsFactory, $location) ->
     PostsFactory.category == category.slug
 
   vm.openCategory = (category) ->
+    window.scrollTo('header', 200)
     $location.hash(category.slug)
 
   return vm
