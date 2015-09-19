@@ -2,7 +2,7 @@ window.Posts ?= {}
 window.UtisakApiUrl = ""
 
 angular
-  .module("postsApp", ["yaru22.angular-timeago", "ngSanitize"])
+  .module("postsApp", ["yaru22.angular-timeago", "ngSanitize", "afkl.lazyImage"])
   .factory("HttpInterceptor", ["$q", "$rootScope", Posts.HttpInterceptor])
   .config([
     "$httpProvider"
