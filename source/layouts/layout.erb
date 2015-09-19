@@ -17,8 +17,7 @@
   </head>
 
   <body class="<%= page_classes %>">
-    <%= javascript_include_tag :application %>
-
+    <%= partial "lazy_js" %>
     <div class="container u-full-width">
 
       <div class="row header">
@@ -28,7 +27,5 @@
       <%= yield %>
 
     </div>
-
-    <%= partial "swiftype" %>
   </body>
 </html>
