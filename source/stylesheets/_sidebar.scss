@@ -1,23 +1,26 @@
 .sidebar {
   background: #f8f8f8;
-  padding: 20px 15px 0;
-  @media (min-width: 550px) { padding: 20px 50px 0 }
-  @media (min-width: 1000px) { padding: 50px 0 0 }
-
+  padding: 0 15px;
+  @media (min-width: 550px) { padding: 0 50px }
+  @media (min-width: 1000px) { padding: 0 0 50px 0 }
 }
 
 .sidebar h5 {
-  margin: 0 0 0 20px
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 24px;
+  @media (min-width: 1000px) {
+    padding: 50px 40px 40px;
+    text-align: left;
+    font-size: 2.4rem;
+  }
 }
-// .sidebar hr { margin: .5rem 20px 0 }
 
 .sidebar .clear-filter {
   float: right;
-  margin: 0 41px 0 0;
-  font-size: 14px;
-  line-height: 2.5em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  padding-right: 10px;
+  &:hover { text-decoration: none; }
 }
 
 .search-filters {
@@ -25,20 +28,11 @@
   margin-top: 0;
   a {
     display:block;
-    position: relative;
-    font-size: 16px;
-    padding: 15px 10px 8px;
     cursor: pointer;
-    clear: both;
-    height: 40px;
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
-
     position: relative;
-    font-size: 16px;
-    padding: 15px 40px 8px;
-    padding-bottom: 15px;
-    cursor: pointer;
     clear: both;
+    font-size: 16px;
+    padding: 15px 20px;
     height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     border-left: 1px solid rgba(0, 0, 0, 0.05);
@@ -47,6 +41,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    @media (min-width: 1000px) { padding: 15px 40px; }
   }
   a:hover,
   .active {
@@ -75,28 +70,30 @@
   border: 1px solid #8BA4D0;
 }
 
-.terms {
+.sidebar-box {
   font-size: 13px;
-  margin: 20px;
+  margin-bottom: 40px;
   border: 1px solid #ddd;
   padding: 20px;
   background: #fff;
-  color: #666
+  color: #666;
+  @media (min-width: 1000px) { margin: 20px; }
 }
-.terms a {
+.sidebar-box a {
   font-size: 13px;
-  color: #999
+  color: #999;
 }
-.terms a:hover {
+.sidebar-box a:hover {
   text-decoration: underline
 }
-.terms .terms-tout a {
-  color: #E8BA7D;
-  font-size: 16px
+.sidebar-box-main a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5376B6;
 }
-.terms hr {
+.sidebar-box hr {
   margin: 5px 0
 }
-.terms-tout {
+.sidebar-box-main {
   font-size: 16px
 }
