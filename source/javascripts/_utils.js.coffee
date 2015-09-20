@@ -1,4 +1,4 @@
-window.scrollTo = (elementId, duration) ->
+window._scrollTo = (elementId, duration) ->
   return if duration < 0
   to = document.getElementById(elementId).offsetTop
   scrollTop = document.body.scrollTop + document.documentElement.scrollTop
@@ -8,5 +8,5 @@ window.scrollTo = (elementId, duration) ->
     document.body.scrollTop = scrollTop
     document.documentElement.scrollTop = scrollTop
     return if scrollTop == to
-    scrollTo elementId, duration - 10
+    _scrollTo elementId, duration - 10
   ), 10

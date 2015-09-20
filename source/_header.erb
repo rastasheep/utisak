@@ -9,7 +9,11 @@
 </div>
 
 <div class=" header-nav">
-  <a href="javascript:scrollTo('categories', 200)" class="header-nav-link header-nav-categories">Kategorije</a>
+
+  <% if @page_name == "index" %>
+    <a href="javascript:_scrollTo('categories', 200)" class="header-nav-link header-nav-categories">Kategorije</a>
+  <% end %>
+
   <a href="/o-nama.html" class="header-nav-link" tabindex=3>O sajtu</a>
 </div>
 
