@@ -7,6 +7,7 @@
 //= require ./_app_content_directive
 //= require ./_share_link_directive
 //= require ./_http_interceptor_factory
+//= require ./_time_ago_factory
 //= require ./_posts_factory
 //= require ./_categories_contoller
 //= require ./_posts_controller

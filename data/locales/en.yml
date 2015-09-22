@@ -1,0 +1,30 @@
+# General
+#
+time_ago_lang: "en_EN"
+main_title: "Utisak"
+main_description: ""
+
+# Header
+#
+search: "Search"
+about_us: "About"
+categories: "Categories"
+
+# Posts
+#
+top: "Top"
+newest: "Newest"
+email_intro: "Check out this link I found on Utisak:"
+share: "Share"
+load_more: "Load More Stories"
+views: "views"
+time_to_read: ""
+minutes: "min"
+
+# App loading errors
+#
+loading_error_heading: >
+  Oops, it seems that our server is having a bad day :(
+loading_error_message: >
+  Please try again in few seconds.<br>
+  Sincerely yours, developers.

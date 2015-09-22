@@ -1,0 +1,51 @@
+# General
+#
+time_ago_lang: "sr_SR"
+main_title: "Utisak | Vesti koje vrede"
+main_description: ""
+
+# Header
+#
+search: "Pretraga"
+about_us: "O nama"
+categories: "Kategorije"
+
+# Posts
+#
+top: "Aktuelno"
+newest: "Najnovije"
+email_intro: ""
+share: "Podeli"
+load_more: "Prikaži još vesti"
+views: "pregleda"
+time_to_read: "vreme čitanja"
+minutes: "min"
+
+# App loading errors
+#
+loading_error_heading: >
+  Oops, it seems that our server is having a bad day :(
+loading_error_message: >
+  Please try again in few seconds.<br>
+  Sincerely yours, developers.
+
+time_ago:
+  overrideLang: "sr_SR"
+  sr_SR:
+    prefixAgo: 'pre'
+    prefixFromNow: 'za'
+    suffixAgo: null
+    suffixFromNow: null
+    seconds: 'manje od minuta'
+    minute: '1 minut'
+    minutes: '%d minuta'
+    hour: 'oko 1 sat'
+    hours: 'oko %d sata'
+    day: '1 dan'
+    days: '%d dana'
+    month: 'oko 1 mesec'
+    months: 'oko %d meseca'
+    year: 'oko 1 godine'
+    years: 'oko %d godine'
+    numbers: []
+

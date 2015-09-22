@@ -1,6 +1,8 @@
 window.Posts ?= {}
 
-window.Posts.PostsController = (PostsFactory, $location, $scope) ->
+window.Posts.PostsController = (PostsFactory, timeAgo, $location, $scope) ->
+  timeAgo.settings.strings.sr_SR = window.Posts.TimeAgoConfigSR
+
   vm = this
   vm.posts = []
   vm.wordsPerMin = 250

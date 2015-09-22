@@ -33,6 +33,11 @@ helpers do
   def page_classes
     yield_content(:page_classes)
   end
+
+  def t(key)
+    locale = "sr_latin"
+    data.locales.instance_eval { eval "#{locale}.#{key}" }
+  end
 end
 
 

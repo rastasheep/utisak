@@ -6,15 +6,15 @@
 
     <h5 ng-switch on="postsCtrl.sort">
       <span ng-switch-when="newest">
-        Newest
+        <%= t(:newest) %>
         <!-- dot spacer --> · <!-- dot space -->
-        <a href ng-click="postsCtrl.setSort('top')">Top</a>
+        <a href ng-click="postsCtrl.setSort('top')"><%= t(:top) %></a>
       </span>
 
       <span ng-switch-when="top">
-        <a href ng-click="postsCtrl.setSort('newest')">Newest</a>
+        <a href ng-click="postsCtrl.setSort('newest')"><%= t(:newest) %></a>
         <!-- dot spacer --> · <!-- dot space -->
-        Top
+        <%= t(:top) %>
       </span>
     </h5>
 
@@ -42,7 +42,7 @@
               </a>
             </li>
             <li>
-            <a href share-link="mailto:?subject=%5BUtisak%5D%20{{post.title | urlEncode}}&amp;body={{ 'Check out this link I found on Utisak: ' | urlEncode }}%0D%0A {{post.title | urlEncode}}%20{{post.share_url | urlEncode}}">
+            <a href share-link="mailto:?subject=%5BUtisak%5D%20{{post.title | urlEncode}}&amp;body={{ '<%= t(:email_intro) %> ' | urlEncode }}%0D%0A {{post.title | urlEncode}}%20{{post.share_url | urlEncode}}">
                 <%= svg "icon-email" %>
               </a>
             </li>
@@ -70,15 +70,15 @@
             <!-- dot spacer --> · <!-- dot space -->
           <span>
             <span class="article-stats">
-              {{ post.total_views }} views
+              {{ post.total_views }} <%= t(:views) %>
               <!-- dot spacer --> · <!-- dot space -->
-              {{ postsCtrl.readTime(post) }} min
+              <%= t(:time_to_read) %> {{ postsCtrl.readTime(post) }} <%= t(:minutes) %>
             </span>
           </span>
         </div>
 
         <div class="share">
-          <a href ng-click="postsCtrl.share(post)">Share</a>
+          <a href ng-click="postsCtrl.share(post)"><%= t(:share) %></a>
         </div>
       </div><!-- .article-meta -->
 
@@ -88,7 +88,7 @@
          ng-class="{disabled: postsCtrl.loading}"
          ng-click="postsCtrl.nextPage()"
          ng-show="postsCtrl.morePages">
-      <span ng-hide="postsCtrl.loading">Load More Stories</span>
+         <span ng-hide="postsCtrl.loading"><%= t(:load_more) %></span>
       <div class="spinner" ng-show="postsCtrl.loading"></div>
     </div>
   </div>
@@ -97,13 +97,8 @@
 </div>
 
 <div class="error-message">
-  <p>
-    Oops, it seems that our server is having a bad day :(
-  </p>
-  <p>
-    Please try again in few seconds.<br>
-    Sincerely yours, developers.
-  </p>
+  <p><%= t(:loading_error_heading) %></p>
+  <p><%= t(:loading_error_message) %></p>
 </div>
 
 <div class="loading-message">

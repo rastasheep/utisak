@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= t(:time_ago_lang) %>">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -7,8 +7,8 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>document.write('<base href="' + document.location + '" />');</script>
 
-    <title>Utisak | The latest news</title>
-    <meta name="description" content="">
+    <title><%= t(:main_title) %></title>
+    <meta name="description" content="<%= t(:main_description) %>">
 
     <%= favicon_tag "favicon.png", :type => "image/x-icon" %>
     <%= favicon_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
