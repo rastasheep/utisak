@@ -2,12 +2,14 @@
 #
 time_ago_lang: "en_EN"
 main_title: "Utisak"
-main_description: ""
+main_description: "Discover real news with utisak"
+main_keywords: ""
 
 # Header
 #
 search: "Search"
 about_us: "About"
+back_to_home: "Back"
 categories: "Categories"
 
 # Posts
@@ -20,6 +22,15 @@ load_more: "Load More Stories"
 views: "views"
 time_to_read: ""
 minutes: "min"
+
+# Sidebar
+#
+sidebar_header: "Categories"
+sidebar_box_header: "Want More Utisak?"
+sidebar_box_body: "Stay up-to-date by following us"
+and: "and"
+tos: "Terms of Service"
+contact: "contact us"
 
 # App loading errors
 #

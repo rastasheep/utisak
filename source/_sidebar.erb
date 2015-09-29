@@ -3,7 +3,7 @@
      ng-init="catCtrl.init()">
 
    <h5 id="categories">
-     Kategorije
+     <%= t(:sidebar_header) %>
      <a href class="clear-filter"
        ng-click="catCtrl.openCategory({slug: null})"
        ng-hide="catCtrl.activeCategory({slug: ''})">×</a>
@@ -26,14 +26,14 @@
 
   <div class="sidebar-box">
     <div class="sidebar-box-main">
-      <b>Want More Utisak?</b><br>
-      Stay up-to-date by following us on
-      <a href="http://twitter.com/utisak_">Twitter</a> and
-      <a href="http://instagram.com/#">Instagram</a>
+      <b><%= t(:sidebar_box_header) %></b><br>
+      <%= t(:sidebar_box_body) %>
+      <a href="http://twitter.com/utisak_">Twitter</a> <%= t(:and) %>
+      <a href="http://facebook.com/najutisak">Facebook</a>.
     </div>
     <hr>
-    <a href="/terms-of-service">Terms of Service</a>  and
-    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/o-nama#uslovi" target="_self"><%= t(:tos) %></a>,
+    <a href="/o-nama#kontakt" target="_self"><%= t(:contact) %></a>.
   </div>
 
 </div>

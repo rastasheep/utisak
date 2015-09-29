@@ -26,6 +26,11 @@ page "/*.txt", layout: false
 # end
 
 helpers do
+  def image_url(source)
+    host_with_port = "https://utisak.com"
+    host_with_port + image_path(source)
+  end
+
   def svg(file_name)
     partial "inline-assets/#{file_name}"
   end
@@ -42,10 +47,12 @@ end
 
 
 configure :development do
+  activate :directory_indexes
   activate :minify_html, remove_input_attributes: false
 end
 
 configure :build do
+  activate :directory_indexes
   activate :asset_hash
   activate :minify_html, remove_input_attributes: false
   activate :minify_css

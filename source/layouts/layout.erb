@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="<%= t(:time_ago_lang) %>">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="origin">
+
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <script>document.write('<base href="' + document.location + '" />');</script>
 
     <title><%= t(:main_title) %></title>
     <meta name="description" content="<%= t(:main_description) %>">
+    <meta name="keywords" content="<%= t(:main_keywords) %>"/>
+
+    <meta name="rating" content="general"/>
+    <meta http-equiv="content-language" content="sr-Latn"/>
+
+    <meta property="og:site_name" content="Utisak"/>
+    <meta property="og:url" content="http://utisak.com"/>
+    <meta property="og:title" content="<%= t(:main_title) %>"/>
+    <meta property="og:description" content="<%= t(:main_description) %>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="<%= image_url("media-img.png") %>"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@utisak_"/>
+    <meta name="twitter:title" content="<%= t(:main_title) %>"/>
+    <meta name="twitter:description" content="<%= t(:main_description) %>"/>
+    <meta name="twitter:image" content="<%= image_url("media-img.png") %>" />
+
+    <meta itemprop="title" content="<%= t(:main_title) %>"/>
+    <meta itemprop="description" content="<%= t(:main_description) %>"/>
+
+    <meta name="googlebot" content="noodp"/>
+    <meta name="slurp" content="noydir"/>
+    <meta name="msnbot" content="noodp"/>
 
     <%= favicon_tag "favicon.png", :type => "image/x-icon" %>
     <%= favicon_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
 
     <%= stylesheet_link_tag :application %>
+    <script>document.write('<base href="' + document.location + '" />');</script>
   </head>
 
   <body class="<%= page_classes %>">

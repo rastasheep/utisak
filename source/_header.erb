@@ -2,8 +2,8 @@
   <a href="/" tabindex=1>
     <%= svg "logo" %>
   </a>
-  <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
-    <input class="search typeahead tt-input" placeholder="<%= t(:search) %>" name="q" type="text" autocomplete="off" spellcheck="false" dir="auto" tabindex=2 style="position: relative; vertical-align: top; background-color: transparent;">
+  <span class="twitter-typeahead">
+    <input class="search typeahead tt-input" placeholder="<%= t(:search) %>" name="q" type="text" autocomplete="off" spellcheck="false" dir="auto" tabindex=2>
   </span>
 
 </div>
@@ -16,8 +16,10 @@
       class="header-nav-link header-nav-categories">
       <%= t(:categories) %>
     </a>
+
+    <a href="/o-nama" class="header-nav-link" tabindex=3><%= t(:about_us) %></a>
+  <% else %>
+    <a href="/" class="header-nav-link" tabindex=3><%= "❮ #{t(:back_to_home)}" %></a>
   <% end %>
 
-  <a href="/o-nama.html" class="header-nav-link" tabindex=3><%= t(:about_us) %></a>
 </div>
-
