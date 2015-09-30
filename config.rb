@@ -27,8 +27,7 @@ page "/*.txt", layout: false
 
 helpers do
   def image_url(source)
-    host_with_port = "https://utisak.com"
-    host_with_port + image_path(source)
+    config[:host_with_port] + image_path(source)
   end
 
   def svg(file_name)
@@ -40,23 +39,31 @@ helpers do
   end
 
   def t(key)
-    locale = "sr_latin"
+    locale = config[:locale]
     data.locales.instance_eval { eval "#{locale}.#{key}" }
   end
 end
 
+set :host_with_port, "https://utisak.com"
+set :locale, "sr_latin"
 
 configure :development do
+  set :tracking_id, "UA-xxxxxxxx-x"
+  set :swiftype_id, "usDLCN3HtvZf3ciRhAAN"
+
   activate :directory_indexes
   activate :minify_html, remove_input_attributes: false
 end
 
 configure :build do
+  set :tracking_id, "UA-67280148-1"
+  set :swiftype_id, "usDLCN3HtvZf3ciRhAAN"
+
   activate :directory_indexes
   activate :asset_hash
-  activate :minify_html, remove_input_attributes: false
   activate :minify_css
-  activate :minify_javascript
+  activate :minify_javascript, inline: true
+  activate :minify_html, remove_input_attributes: false
   activate :gzip
 # activate :imageoptim
 end
