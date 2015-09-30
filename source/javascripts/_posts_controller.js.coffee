@@ -1,7 +1,7 @@
 window.Posts ?= {}
 
 window.Posts.PostsController = (PostsFactory, timeAgo, $location, $scope) ->
-  timeAgo.settings.strings.sr-Latn = window.Posts.TimeAgoConfigSR
+  timeAgo.settings.strings.sr_SR = window.Posts.TimeAgoConfigSR
 
   vm = this
   vm.posts = []
