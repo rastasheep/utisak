@@ -4,14 +4,14 @@ window.Posts.PostsFactory = ($http, $q)->
 
   fetchPosts = (page) ->
     params = {}
-    angular.extend(params, {category: @category}) if !!@category
+    angular.extend(params, {category: @filter.join(",")}) unless filterPresent()
     angular.extend(params, {page: page}) if page != 1
     angular.extend(params, {sort: @sort}) if @sort != "top"
 
     $http({method: "GET", cache: true, url: PostsFactory.url, params: params}).then (response) =>
       @posts = response.data.posts
       @categories = response.data.categories
-      return $q.reject("CNF") unless _categoryExists(@categories, @category)
+      return $q.reject("CNF") unless _categoryExists(@categories, @filter)
       response
 
   fetchCategories = ->
@@ -21,17 +21,21 @@ window.Posts.PostsFactory = ($http, $q)->
 
   setOptions = (options = {}) ->
     @sort = options.sort
-    @category = options.category
+    @filter = _.without(options.filter, "").sort()
+
+  filterPresent = ->
+    !_.isEmpty(@filter)
 
   _categoryExists = (categories, category) ->
-    return true if category.length == 0 or !categories
-    categories.some((cat) -> cat.slug == category)
+    return true if _.isEmpty(category)
+    !_.isEmpty(_.intersection(_.pluck(categories, 'slug'), category))
 
   PostsFactory =
     url: "#{window.UtisakApiUrl}/posts"
     posts: @posts
     categories: @categories
-    category: @category
+    filter: @filter
+    filterPresent: filterPresent
     fetchCategories: fetchCategories
     fetchPosts: fetchPosts
     setOptions: setOptions

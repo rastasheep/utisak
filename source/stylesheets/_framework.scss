@@ -431,3 +431,21 @@ hr {
   display: table;
   clear: both
 }
+
+.u-flex-table {
+  display: table;
+  width: 100%;
+}
+
+// Place this on every "cell"
+.u-flex-table-item {
+  display: table-cell;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+// Place this on the largest or most important "cell"
+.u-flex-table-item-primary {
+  width: 99%;
+}

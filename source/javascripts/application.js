@@ -2,6 +2,7 @@
 //= require angular-sanitize
 //= require angular-timeago
 //= require afkl-lazy-image
+//= require lodash
 //
 //= require ./_url_encode_filter
 //= require ./_app_content_directive

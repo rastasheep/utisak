@@ -26,7 +26,7 @@
 .search-filters {
   // padding: 0 20px;
   margin-top: 0;
-  a {
+  ._category {
     display:block;
     cursor: pointer;
     position: relative;
@@ -43,32 +43,57 @@
     user-select: none;
     @media (min-width: 1000px) { padding: 15px 40px; }
   }
-  a:hover,
-  .active {
-    border-left: 1px solid #8BA4D0;
-    border-right: 1px solid #8BA4D0;
-    background: #fff; }
 }
 
-.feed-name {
-  float: left;
+.category-title {
   line-height: 40px;
   text-transform: uppercase;
+  padding: 20px 0px 20px 20px;
 }
 
-.feed-count {
-  float: right;
-  font-size: 14px;
-  border-radius: -21%;
-  line-height: 38px;
-  width: 30px;
-  text-align: center;
-  border: 1px solid #DDD;
-}
+.category-action {
+  padding: 20px 20px 20px 0px;
 
-.active .feed-count {
+  div {
+    display: block;
+    width: 30px;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid #DDD;
+  }
+}
+.category-unpin,
+.category-pin {
+  display: none;
+  &:hover { text-decoration:none; }
+  &:hover div {
+    color: #fff;
+    background-color: #8BA4D0;
+  }
+}
+.category-pinnable .category-count { display: none; }
+.category-pinnable .category-pin { display: block; }
+
+.category-unpinnable .category-unpin { display: block; }
+.category-unpinnable .category-count { display: none; }
+.category-unpinnable .category-pin { display: none; }
+
+.category-hover .category-action div {
   border: 1px solid #8BA4D0;
 }
+
+.category {
+  box-sizing: border-box;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+.category:hover,
+.category-active{
+  border-left: 1px solid #8BA4D0;
+  border-right: 1px solid #8BA4D0;
+  background: #fff;
+ }
 
 .sidebar-box {
   font-size: 13px;

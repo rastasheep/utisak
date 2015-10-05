@@ -92,6 +92,7 @@ GEM
       rails-assets-angular (= 1.4.1)
     rails-assets-angular-timeago (0.1.12)
       rails-assets-angular (>= 1.2.10, < 2)
+    rails-assets-lodash (3.10.1)
     rainbow (2.0.0)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
@@ -134,6 +135,7 @@ DEPENDENCIES
   rails-assets-angular!
   rails-assets-angular-sanitize!
   rails-assets-angular-timeago!
+  rails-assets-lodash!
   scss_lint
 
 BUNDLED WITH

@@ -17,4 +17,5 @@ source "https://rails-assets.org" do
   gem "rails-assets-angular-sanitize"
   gem "rails-assets-angular-timeago"
   gem "rails-assets-afkl-lazy-image"
+  gem "rails-assets-lodash"
 end

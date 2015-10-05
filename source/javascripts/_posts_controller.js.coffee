@@ -11,8 +11,8 @@ window.Posts.PostsController = (PostsFactory, timeAgo, $location, $scope) ->
   vm.morePages = true
   vm.sort = "top"
 
-  initFactory = (category) ->
-    PostsFactory.setOptions(sort: vm.sort, category: category)
+  initFactory = (filter) ->
+    PostsFactory.setOptions(sort: vm.sort, filter: filter)
     loadPosts(init: true, page: 1)
 
   initSort = ->
@@ -23,10 +23,10 @@ window.Posts.PostsController = (PostsFactory, timeAgo, $location, $scope) ->
       vm.setSort("")
 
   $scope.$on "$locationChangeSuccess", ->
-    category = $location.hash()
-    return if _searchActive(category)
+    filter = $location.hash().split(",")
+    return if _searchActive(filter)
     initSort()
-    initFactory(category)
+    initFactory(filter)
 
   vm.nextPage = ->
     return if vm.loading
@@ -59,6 +59,6 @@ window.Posts.PostsController = (PostsFactory, timeAgo, $location, $scope) ->
       $location.hash("") if reason == "CNF"
 
   _searchActive = (query) ->
-    query.indexOf("stq=") > -1
+    _.includes(query, "stq=")
 
   return vm

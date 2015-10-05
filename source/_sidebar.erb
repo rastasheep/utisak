@@ -6,20 +6,37 @@
      <%= t(:sidebar_header) %>
      <a href class="clear-filter"
        ng-click="catCtrl.openCategory({slug: null})"
-       ng-hide="catCtrl.activeCategory({slug: ''})">×</a>
+       ng-hide="catCtrl.emptyFilter()">×</a>
    </h5>
   <hr>
 
   <dl class="search-filters">
 
     <dt ng-repeat="category in catCtrl.categories track by $index"
-        ng-class="{active: catCtrl.activeCategory(category)}"
-        ng-click="catCtrl.openCategory(category)"
-        ng-keydown="$event.which === 13 && catCtrl.openCategory(category)" >
-      <a ng-href="#{{category.slug}}">
-        <div class="feed-name">{{category.title}}</div>
-        <div class="feed-count">{{category.count}}</div>
+        class="u-flex-table category"
+        ng-class="{
+          'category-pinnable': hover && catCtrl.pinnable(category),
+          'category-unpinnable': hover && catCtrl.unpinnable(category),
+          'category-active': catCtrl.activeCategory(category)
+        }"
+        ng-mouseenter="hover = true"
+        ng-mouseleave="hover = false" >
+
+      <a href class="u-flex-table-item u-flex-table-item-primary category-title" ng-click="catCtrl.openCategory(category)">
+        <div class="">{{category.title}}</div>
       </a>
+
+      <a href class="u-flex-table-item category-action category-unpin" ng-click="catCtrl.unpinCategpry(category)">
+        <div>-</div>
+      </a>
+
+      <a href class="u-flex-table-item category-action category-pin" ng-click="catCtrl.pinCategpry(category)">
+        <div>+</div>
+      </a>
+
+      <div class="u-flex-table-item u-flex-table-item category-action category-count">
+        <div class="feed-count">{{category.count}}</div>
+      </div>
     </dt>
 
   </dl>
