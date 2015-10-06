@@ -88,11 +88,13 @@ GEM
     rack (1.6.4)
     rails-assets-afkl-lazy-image (0.1.4)
     rails-assets-angular (1.4.1)
+    rails-assets-angular-moment (0.10.3)
+      rails-assets-angular (>= 1.2.0, < 1.5.0)
+      rails-assets-moment (>= 2.8.0, < 2.11.0)
     rails-assets-angular-sanitize (1.4.1)
       rails-assets-angular (= 1.4.1)
-    rails-assets-angular-timeago (0.1.12)
-      rails-assets-angular (>= 1.2.10, < 2)
     rails-assets-lodash (3.10.1)
+    rails-assets-moment (2.10.6)
     rainbow (2.0.0)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
@@ -133,9 +135,10 @@ DEPENDENCIES
   middleman-sprockets
   rails-assets-afkl-lazy-image!
   rails-assets-angular!
+  rails-assets-angular-moment!
   rails-assets-angular-sanitize!
-  rails-assets-angular-timeago!
   rails-assets-lodash!
+  rails-assets-moment!
   scss_lint
 
 BUNDLED WITH

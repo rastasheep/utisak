@@ -15,7 +15,8 @@ gem "coffeelint"
 source "https://rails-assets.org" do
   gem "rails-assets-angular"
   gem "rails-assets-angular-sanitize"
-  gem "rails-assets-angular-timeago"
   gem "rails-assets-afkl-lazy-image"
   gem "rails-assets-lodash"
+  gem "rails-assets-moment"
+  gem "rails-assets-angular-moment"
 end
