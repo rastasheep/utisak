@@ -4,7 +4,7 @@ window.Posts.PostsFactory = ($http, $q)->
 
   fetchPosts = (page) ->
     params = {}
-    angular.extend(params, {category: @filter.join(",")}) unless filterPresent()
+    angular.extend(params, {category: @filter.join(",")}) if @filterPresent()
     angular.extend(params, {page: page}) if page != 1
     angular.extend(params, {sort: @sort}) if @sort != "top"
 
