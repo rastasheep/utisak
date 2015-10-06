@@ -59,6 +59,6 @@ window.Posts.PostsController = (PostsFactory, timeAgo, $location, $scope) ->
       $location.hash("") if reason == "CNF"
 
   _searchActive = (query) ->
-    _.includes(query, "stq=")
+      query.join(",").indexOf("stq=") != -1
 
   return vm
