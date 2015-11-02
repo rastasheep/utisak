@@ -44,8 +44,12 @@
     <%= favicon_tag "favicon.png", :type => "image/x-icon" %>
     <%= favicon_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
 
-    <%= stylesheet_link_tag :application %>
+    <% stylesheet_link_tag :application %>
     <script>document.write('<base href="' + document.location + '" />');</script>
+    <style>
+<%= sprockets.find_asset('application.css').to_s %>
+    </style>
+
   </head>
 
   <body class="<%= page_classes %>">

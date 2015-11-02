@@ -52,6 +52,8 @@ configure :development do
   set :swiftype_id, "usDLCN3HtvZf3ciRhAAN"
 
   activate :directory_indexes
+  activate :minify_javascript, inline: true
+  activate :minify_css, inline: true
   activate :minify_html, remove_input_attributes: false
 end
 
@@ -61,7 +63,7 @@ configure :build do
 
   activate :directory_indexes
   activate :asset_hash
-  activate :minify_css
+  activate :minify_css, inline: true
   activate :minify_javascript, inline: true
   activate :minify_html, remove_input_attributes: false
   activate :gzip
