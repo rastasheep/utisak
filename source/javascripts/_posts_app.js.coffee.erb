@@ -1,5 +1,5 @@
 window.Posts ?= {}
-window.UtisakApiUrl = ""
+window.UtisakApiUrl = "<%= config[:api_url] %>"
 
 angular
   .module("postsApp", ["angularMoment", "ngSanitize", "afkl.lazyImage"])

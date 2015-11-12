@@ -50,6 +50,7 @@ set :locale, "sr_latin"
 configure :development do
   set :tracking_id, "UA-xxxxxxxx-x"
   set :swiftype_id, "usDLCN3HtvZf3ciRhAAN"
+  set :api_url, "http://local.go/vesti"
 
   activate :directory_indexes
   activate :minify_javascript, inline: true
@@ -60,6 +61,7 @@ end
 configure :build do
   set :tracking_id, "UA-67280148-1"
   set :swiftype_id, "usDLCN3HtvZf3ciRhAAN"
+  set :api_url, "http://api.utisak.com/vesti"
 
   activate :directory_indexes
   activate :asset_hash

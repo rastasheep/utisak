@@ -31,7 +31,7 @@ window.Posts.PostsFactory = ($http, $q)->
     !_.isEmpty(_.intersection(_.pluck(categories, 'slug'), category))
 
   PostsFactory =
-    url: "#{window.UtisakApiUrl}/vesti"
+    url: window.UtisakApiUrl
     posts: @posts
     categories: @categories
     filter: @filter
