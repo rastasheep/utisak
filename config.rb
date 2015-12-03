@@ -61,7 +61,7 @@ end
 configure :build do
   set :tracking_id, "UA-67280148-1"
   set :swiftype_id, "usDLCN3HtvZf3ciRhAAN"
-  set :api_url, "http://api.utisak.com/vesti"
+  set :api_url, "https://api.utisak.com/vesti"
 
   activate :directory_indexes
   activate :asset_hash
