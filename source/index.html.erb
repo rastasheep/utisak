@@ -60,7 +60,7 @@
 
       <div class="article-meta">
         <div class="article-title">
-          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind="post.title"></a>
+          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" ng-bind-html="post.title"></a>
         </div>
         <div class="article-description" ng-bind-html="post.excerpt"></div>
 
