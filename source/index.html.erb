@@ -52,8 +52,13 @@
 
       <div class="article-image">
         <div class="article-thumb" ng-class="!post.hero_image_url ? 'article-thumb-' + post.category_slug : ''">
-          <a target="_blank" rel="nofollow" ng-href="{{post.share_url}}" tabindex=-1>
-            <div class="afkl-lazy-wrapper" afkl-lazy-image="{{post.hero_image_url}}" ng-show="post.hero_image_url"></div>
+          <a tabindex=-1
+             ng-href="{{post.share_url}}"
+             target="_blank"
+             rel="nofollow"
+             ng-show="post.hero_image_url"
+             afkl-lazy-image="{{post.hero_image_url}}"
+             afkl-lazy-image-options='{"background": true}'>
           </a>
         </div>
       </div><!-- .article-image -->

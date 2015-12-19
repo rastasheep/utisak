@@ -85,16 +85,11 @@
 .article-thumb-svet { @include default-thumb(svet) }
 .article-thumb-tehnologija { @include default-thumb(tehnologija) }
 
-.article-image img {
-  position: absolute;
-  left: -100%;
-  right: -100%;
-  top: -100%;
-  bottom: -100%;
-  margin: auto;
-  min-height: 100%;
-  min-width: 100%;
-  width: 100%
+.article-image a {
+  display: block;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
 }
 @keyframes highlight {
   0% {
