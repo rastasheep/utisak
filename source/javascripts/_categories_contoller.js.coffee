@@ -6,7 +6,7 @@ window.Posts.CategoriesController = (PostsFactory, $location) ->
 
   vm.init = ->
     PostsFactory.fetchCategories().then ->
-      vm.categories = PostsFactory.categories
+      vm.categories = PostsFactory.categories.sort((a, b) => a.title.localeCompare(b.title))
       return
 
   vm.emptyFilter = ->
