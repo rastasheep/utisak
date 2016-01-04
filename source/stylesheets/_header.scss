@@ -9,10 +9,14 @@
 }
 
 .logo {
-  fill: #FFF;
-  width: 120px;
+  display: inline-block;
   margin: 15px 0 0 15px;
   @media (min-width: 550px) { margin: 15px 0 0 50px }
+}
+
+.logo svg {
+  fill: #FFF;
+  width: 120px;
 }
 
 .header-nav {
