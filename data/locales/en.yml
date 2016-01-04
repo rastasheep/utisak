@@ -2,8 +2,10 @@
 #
 moment_locale: "en"
 main_title: "Utisak"
+main_title_short: "Utisak"
 main_description: "Discover real news with utisak"
 main_keywords: ""
+theme_color: "#8BA4D0"
 
 # Header
 #

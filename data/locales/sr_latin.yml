@@ -2,8 +2,10 @@
 #
 moment_locale: "sr"
 main_title: "Utisak | Vesti koje nešto znače"
+main_title_short: "Utisak"
 main_description: "Utisak je servis koji vam omogućava da brzo i lako pratite aktuelne vesti bez kiča i uređivačke politike."
 main_keywords: "Vesti, Najnovije vesti, Sport, Kultura, Biznis, Srbija Balkan"
+theme_color: "#8BA4D0"
 
 # Header
 #
