@@ -20,3 +20,4 @@
 # App specific
 packaging/output/*
 packaging/root/usr/local/share/utisak-webui/*
+vendor
