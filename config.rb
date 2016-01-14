@@ -15,6 +15,15 @@ page "/*.txt", layout: false
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
+#
+activate :s3_sync do |s3_sync|
+  # s3_sync.aws_access_key_id        = "AWS KEY ID"
+  # s3_sync.aws_secret_access_key    = "AWS SECRET KEY"
+  # s3_sync.bucket                   = "beta.utisak.com"
+  s3_sync.region                     = "eu-central-1"
+  s3_sync.index_document             = "index.html"
+  s3_sync.error_document             = "404/index.html"
+end
 
 ###
 # Helpers
