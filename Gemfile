@@ -8,6 +8,8 @@ gem "middleman-cli"
 gem "middleman-sprockets"
 gem "middleman-minify-html"
 #gem "middleman-imageoptim"
+gem "middleman-s3_sync", "4.0.1.rc.3"
+gem "mime-types"
 
 gem "scss_lint", :require => false
 gem "coffeelint"
